@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import HomePage from "../../features/home/HomePage";
 import App from "../layout/App";
 import Catalog from "../../features/catalog/Catalog";
-import { ContactPage } from "@mui/icons-material";
+import ContactPage from "../../features/contact/ContactPage"
 import AboutPage from "../../features/about/AboutPage";
 import ProductDetails from "../../features/catalog/ProductDetails";
 
