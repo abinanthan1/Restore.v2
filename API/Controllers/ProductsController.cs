@@ -1,16 +1,11 @@
 using API.Data;
 using API.Entities;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ProductsController(Storecontext context) : ControllerBase
+    public class ProductsController(Storecontext context) : BaseApiController
     {
 
         [HttpGet]

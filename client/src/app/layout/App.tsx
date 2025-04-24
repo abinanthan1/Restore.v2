@@ -7,7 +7,7 @@ import { useAppSelector } from "../store/store";
 
 
 function App() {
-  const {darkMode}= useAppSelector(state=>state.ui);
+  const { darkMode } = useAppSelector(state => state.ui);
   const palleteType = darkMode ? 'dark' : 'light'
   const theme = createTheme({
     palette: {
@@ -17,7 +17,7 @@ function App() {
       }
     }
   });
- 
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
