@@ -6,31 +6,30 @@ namespace API.Data;
 
 public class Dbinitializer
 {
-   public  static void InitDb(WebApplication app)
-   {
-    using var scope = app.Services.CreateScope();
+    public static void InitDb(WebApplication app)
+    {
+        using var scope = app.Services.CreateScope();
 
-    var context = scope.ServiceProvider.GetRequiredService<Storecontext>()
-        ??throw new InvalidOperationException("Failed to retrieve store context");
+        var context = scope.ServiceProvider.GetRequiredService<Storecontext>()
+            ?? throw new InvalidOperationException("Failed to retrieve store context");
 
 
-    SeedData(context);
-   }
+        SeedData(context);
+    }
 
     private static void SeedData(Storecontext context)
     {
         context.Database.Migrate();
 
-        if(context.Products.Any()) return;
+        if (context.Products.Any()) return;
 
         var Products = new List<Product>
         {
-            		new() {
+                    new() {
                     Name = "Angular Speedster Board 2000",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+                    Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                     Price = 20000,
-                pictureUrl = "/images/products/sb-ang1.png",
+                    pictureUrl = "/images/products/sb-ang1.png",
                     Brand = "Angular",
                     Type = "Boards",
                     QuantityInStock = 100
@@ -203,7 +202,7 @@ public class Dbinitializer
                     Type = "Boots",
                     QuantityInStock = 100
                 }
-        
+
         };
 
         context.Products.AddRange(Products);

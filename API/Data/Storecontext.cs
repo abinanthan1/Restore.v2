@@ -7,7 +7,8 @@ namespace API.Data;
 
 public class Storecontext(DbContextOptions options) : DbContext(options)
 {
-    public DbSet <Product> Products { get; set; }
+    public required DbSet <Product> Products { get; set; }
+    public required DbSet<Basket> Baskets { get; set; }
 
     public static implicit operator ControllerContext(Storecontext v)
     {
