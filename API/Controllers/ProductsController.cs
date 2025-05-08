@@ -3,7 +3,6 @@ using API.Entities;
 using API.Extensions;
 using API.RequestHelpers;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
